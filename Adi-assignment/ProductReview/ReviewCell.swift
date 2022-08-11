@@ -9,7 +9,7 @@ import UIKit
 
 final class ReviewCell: UITableViewCell {
 
-    func configure(review: ProductReview) {
+    func configure(review: Review) {
         self.textLabel?.text = review.text
     }
 }

@@ -22,10 +22,27 @@ final class ProductVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = self.viewModel.productName()
+
+        configureViews()
+        setBindings()
+
+        reloadReviews()
+    }
+
+    private func setBindings() {
+        self.viewModel.onError = { [weak self] error in
+            self?.presentErrorAlert(error: error)
+        }
+        self.viewModel.loadReviews { [weak self] in
+            self?.reloadReviews()
+        }
+    }
+
+    private func configureViews() {
         let addReviewBarItem = UIBarButtonItem(title: "Add review", style: .plain, target: self, action: #selector(onAddReview))
         self.navigationItem.rightBarButtonItem = addReviewBarItem
 
-        self.title = self.viewModel.productName()
         if let url = self.viewModel.productImageUrl() {
             self.productImageView.loadImage(url: url)
         }
@@ -36,13 +53,25 @@ final class ProductVC: UIViewController {
         self.reviewsTableView.dataSource = self
         let nib = UINib(nibName: "ReviewCell", bundle: nil)
         self.reviewsTableView.register(nib, forCellReuseIdentifier: ReviewCell.identifier)
-
-        self.viewModel.loadReviews { [weak self] in
-            self?.reloadReviews()
-        }
     }
 
     @objc private func onAddReview() {
+
+        let submitBlock: (String?) -> Void = { [weak self] text in
+            guard let text = text else { return }
+            self?.viewModel.addReview(text: text, completion: {
+                self?.reloadReviews()
+            })
+        }
+
+        let (alert, textView) = self.addReviewAlertController(submitBlock: submitBlock)
+
+        present(alert, animated: true, completion: {
+            textView.becomeFirstResponder()
+        })
+    }
+
+    private func addReviewAlertController(submitBlock: @escaping (String?) -> Void) -> (UIAlertController, UITextView) {
         let alert = UIAlertController(title: "Add Review", message: nil, preferredStyle: .alert)
         let textView = UITextView()
         textView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
@@ -53,40 +82,27 @@ final class ProductVC: UIViewController {
         controller.view.addSubview(textView)
 
         alert.setValue(controller, forKey: "contentViewController")
+        alert.view.heightAnchor.constraint(equalToConstant: 200).isActive = true
 
-        let height = NSLayoutConstraint(item: alert.view!,
-                                        attribute: .height,
-                                        relatedBy: .equal,
-                                        toItem: nil,
-                                        attribute: .notAnAttribute,
-                                        multiplier: 1,
-                                        constant: view.frame.height * 0.5)
-        alert.view.addConstraint(height)
-
-        let submit = UIAlertAction(title: "Submit", style: .default) { [weak self] _ in
-            if let text = textView.text {
-                self?.viewModel.addReview(text: text, completion: {
-                    self?.reloadReviews()
-                })
-            }
+        let submit = UIAlertAction(title: "Submit", style: .default) { _ in
+            submitBlock(textView.text)
         }
         alert.addAction(submit)
 
         let cancel = UIAlertAction(title: "Cancel", style: .cancel)
         alert.addAction(cancel)
 
-        textView.becomeFirstResponder()
-
-        present(alert, animated: true, completion: nil)
+        return (alert, textView)
     }
 
     private func reloadReviews() {
-        self.reviewsLabel.isHidden = self.viewModel.numberOfReviews() == 0
+        self.reviewsLabel.text = self.viewModel.numberOfReviews() == 0 ? "No reviews" : "Reviews"
         self.reviewsTableView.reloadData()
     }
 }
 
 extension ProductVC: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.numberOfReviews()
     }

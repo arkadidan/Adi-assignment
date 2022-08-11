@@ -24,7 +24,7 @@ final class ProductListVM {
     func loadData(completion: @escaping () -> Void) {
         Task {
             do {
-                let products: [Product] = try await self.httpService.sendRequest(HttpRequest.product().urlRequest())
+                let products: [Product] = try await self.httpService.sendRequest(ProductsRequest().urlRequest())
                 self.allProducts = products
                 DispatchQueue.main.async {
                     completion()

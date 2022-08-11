@@ -11,11 +11,11 @@ final class ProductVM {
 
     let product: Product
 
-    let service: ProductServiceProtocol = ProductService()
+    let reviewService: ReviewServiceProtocol = ReviewService()
 
     var onError: ((Error) -> Void)?
 
-    private var reviews = [ProductReview]()
+    private var reviews = [Review]()
 
     init(product: Product) {
         self.product = product
@@ -40,7 +40,7 @@ final class ProductVM {
     func loadReviews(completion: @escaping () -> Void) {
         Task {
             do {
-                let reviews = try await self.service.reviews(prodictId: self.product.id)
+                let reviews = try await self.reviewService.reviews(prodictId: self.product.id)
                 self.reviews = reviews
                 DispatchQueue.main.async {
                     completion()
@@ -56,7 +56,7 @@ final class ProductVM {
     func addReview(text: String, completion: @escaping () -> Void) {
         Task {
             do {
-                let reviews = try await self.service.reviews(prodictId: self.product.id)
+                let reviews = try await self.reviewService.addReview(text: text, productId: self.product.id)
                 self.reviews = reviews
                 DispatchQueue.main.async {
                     completion()
@@ -73,7 +73,7 @@ final class ProductVM {
         return self.reviews.count
     }
 
-    func review(indexPath: IndexPath) -> ProductReview {
+    func review(indexPath: IndexPath) -> Review {
         return self.reviews[indexPath.row]
     }
 }

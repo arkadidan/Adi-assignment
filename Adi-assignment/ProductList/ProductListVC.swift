@@ -20,11 +20,13 @@ final class ProductListVC: UIViewController {
 
         self.title = "Products"
 
-        self.viewModel.onError = { [weak self] error in
-            let message = error.localizedDescription
-            self?.presentErrorAlert(message: message)
-        }
+        configureViews()
+        setBindings()
 
+        self.loadData()
+    }
+
+    private func configureViews() {
         self.searchField.placeholder = "Search"
         self.searchField.addTarget(self, action: #selector(textFieldDidChange), for: .editingChanged)
 
@@ -32,8 +34,13 @@ final class ProductListVC: UIViewController {
         self.tableView.dataSource = self
         let cellNib = UINib(nibName: "ProductListCell", bundle: nil)
         self.tableView.register(cellNib, forCellReuseIdentifier: ProductListCell.identifier)
+    }
 
-        self.loadData()
+    private func setBindings() {
+        self.viewModel.onError = { [weak self] error in
+            let message = error.localizedDescription
+            self?.presentErrorAlert(message: message)
+        }
     }
 
     private func loadData() {
@@ -65,6 +72,7 @@ final class ProductListVC: UIViewController {
 }
 
 extension ProductListVC: UITableViewDataSource {
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.viewModel.numberOfRows()
     }
@@ -78,42 +86,14 @@ extension ProductListVC: UITableViewDataSource {
 }
 
 extension ProductListVC: UITableViewDelegate {
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
         let product = self.viewModel.item(indexPath: indexPath)
         self.onOpenProduct?(product)
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
-    }
-}
-
-extension UIViewController {
-
-    func presentErrorAlert(message: String) {
-        let alert = UIAlertController(title: "Error!", message: message, preferredStyle: .alert)
-        self.present(alert, animated: true)
-    }
-
-    static var storyboardId: String {
-        return String(describing: self)
-    }
- }
-
-extension UIStoryboard {
-    func instantiateViewController<T: UIViewController>(type: T.Type) -> T {
-        return self.instantiateViewController(withIdentifier: type.storyboardId) as! T
-    }
-}
-
-extension UITableView {
-    func dequeue<T: UITableViewCell>(_ cellType: T.Type) -> T {
-        return self.dequeueReusableCell(withIdentifier: cellType.identifier) as! T
-    }
-}
-
-extension UITableViewCell {
-    static var identifier: String {
-        return String(describing: self)
     }
 }
