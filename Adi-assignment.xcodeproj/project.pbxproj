@@ -8,23 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		6B4A651928A4B1440093A831 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A651828A4B1440093A831 /* AppDelegate.swift */; };
-		6B4A651B28A4B1440093A831 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A651A28A4B1440093A831 /* SceneDelegate.swift */; };
-		6B4A651D28A4B1440093A831 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A651C28A4B1440093A831 /* ViewController.swift */; };
 		6B4A652028A4B1450093A831 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B4A651E28A4B1450093A831 /* Main.storyboard */; };
 		6B4A652228A4B14A0093A831 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B4A652128A4B14A0093A831 /* Assets.xcassets */; };
 		6B4A652528A4B14A0093A831 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B4A652328A4B14A0093A831 /* LaunchScreen.storyboard */; };
 		6B4A653028A4B14B0093A831 /* Adi_assignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A652F28A4B14B0093A831 /* Adi_assignmentTests.swift */; };
+		6B4A654A28A4B2A90093A831 /* HttpService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A654928A4B2A90093A831 /* HttpService.swift */; };
+		6B4A654F28A4B96C0093A831 /* ProductListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A654E28A4B96C0093A831 /* ProductListVM.swift */; };
+		6B4A655128A4B9BC0093A831 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A655028A4B9BC0093A831 /* Coordinator.swift */; };
+		6B4A655328A4C10D0093A831 /* ProductListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A655228A4C10D0093A831 /* ProductListVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		6B4A652C28A4B14B0093A831 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 6B4A650D28A4B1440093A831 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 6B4A651428A4B1440093A831;
-			remoteInfo = "Adi-assignment";
-		};
-		6B4A653628A4B14B0093A831 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 6B4A650D28A4B1440093A831 /* Project object */;
 			proxyType = 1;
@@ -36,15 +31,16 @@
 /* Begin PBXFileReference section */
 		6B4A651528A4B1440093A831 /* Adi-assignment.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Adi-assignment.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4A651828A4B1440093A831 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6B4A651A28A4B1440093A831 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		6B4A651C28A4B1440093A831 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		6B4A651F28A4B1450093A831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6B4A652128A4B14A0093A831 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6B4A652428A4B14A0093A831 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6B4A652628A4B14A0093A831 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6B4A652B28A4B14B0093A831 /* Adi-assignmentTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Adi-assignmentTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B4A652F28A4B14B0093A831 /* Adi_assignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Adi_assignmentTests.swift; sourceTree = "<group>"; };
-		6B4A653528A4B14B0093A831 /* Adi-assignmentUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Adi-assignmentUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B4A654928A4B2A90093A831 /* HttpService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpService.swift; sourceTree = "<group>"; };
+		6B4A654E28A4B96C0093A831 /* ProductListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListVM.swift; sourceTree = "<group>"; };
+		6B4A655028A4B9BC0093A831 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		6B4A655228A4C10D0093A831 /* ProductListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +52,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		6B4A652828A4B14B0093A831 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6B4A653228A4B14B0093A831 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -86,7 +75,6 @@
 			children = (
 				6B4A651528A4B1440093A831 /* Adi-assignment.app */,
 				6B4A652B28A4B14B0093A831 /* Adi-assignmentTests.xctest */,
-				6B4A653528A4B14B0093A831 /* Adi-assignmentUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -94,9 +82,10 @@
 		6B4A651728A4B1440093A831 /* Adi-assignment */ = {
 			isa = PBXGroup;
 			children = (
+				6B4A654D28A4B7490093A831 /* ProductList */,
+				6B4A654828A4B2750093A831 /* Api */,
 				6B4A651828A4B1440093A831 /* AppDelegate.swift */,
-				6B4A651A28A4B1440093A831 /* SceneDelegate.swift */,
-				6B4A651C28A4B1440093A831 /* ViewController.swift */,
+				6B4A655028A4B9BC0093A831 /* Coordinator.swift */,
 				6B4A651E28A4B1450093A831 /* Main.storyboard */,
 				6B4A652128A4B14A0093A831 /* Assets.xcassets */,
 				6B4A652328A4B14A0093A831 /* LaunchScreen.storyboard */,
@@ -111,6 +100,23 @@
 				6B4A652F28A4B14B0093A831 /* Adi_assignmentTests.swift */,
 			);
 			path = "Adi-assignmentTests";
+			sourceTree = "<group>";
+		};
+		6B4A654828A4B2750093A831 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				6B4A654928A4B2A90093A831 /* HttpService.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		6B4A654D28A4B7490093A831 /* ProductList */ = {
+			isa = PBXGroup;
+			children = (
+				6B4A654E28A4B96C0093A831 /* ProductListVM.swift */,
+				6B4A655228A4C10D0093A831 /* ProductListVC.swift */,
+			);
+			path = ProductList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,24 +157,6 @@
 			productReference = 6B4A652B28A4B14B0093A831 /* Adi-assignmentTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		6B4A653428A4B14B0093A831 /* Adi-assignmentUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6B4A654528A4B14B0093A831 /* Build configuration list for PBXNativeTarget "Adi-assignmentUITests" */;
-			buildPhases = (
-				6B4A653128A4B14B0093A831 /* Sources */,
-				6B4A653228A4B14B0093A831 /* Frameworks */,
-				6B4A653328A4B14B0093A831 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6B4A653728A4B14B0093A831 /* PBXTargetDependency */,
-			);
-			name = "Adi-assignmentUITests";
-			productName = "Adi-assignmentUITests";
-			productReference = 6B4A653528A4B14B0093A831 /* Adi-assignmentUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -183,10 +171,6 @@
 						CreatedOnToolsVersion = 13.3;
 					};
 					6B4A652A28A4B14B0093A831 = {
-						CreatedOnToolsVersion = 13.3;
-						TestTargetID = 6B4A651428A4B1440093A831;
-					};
-					6B4A653428A4B14B0093A831 = {
 						CreatedOnToolsVersion = 13.3;
 						TestTargetID = 6B4A651428A4B1440093A831;
 					};
@@ -207,7 +191,6 @@
 			targets = (
 				6B4A651428A4B1440093A831 /* Adi-assignment */,
 				6B4A652A28A4B14B0093A831 /* Adi-assignmentTests */,
-				6B4A653428A4B14B0093A831 /* Adi-assignmentUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -230,13 +213,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B4A653328A4B14B0093A831 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -244,9 +220,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6B4A651D28A4B1440093A831 /* ViewController.swift in Sources */,
+				6B4A654A28A4B2A90093A831 /* HttpService.swift in Sources */,
+				6B4A655328A4C10D0093A831 /* ProductListVC.swift in Sources */,
+				6B4A655128A4B9BC0093A831 /* Coordinator.swift in Sources */,
 				6B4A651928A4B1440093A831 /* AppDelegate.swift in Sources */,
-				6B4A651B28A4B1440093A831 /* SceneDelegate.swift in Sources */,
+				6B4A654F28A4B96C0093A831 /* ProductListVM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,13 +236,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6B4A653128A4B14B0093A831 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -272,11 +243,6 @@
 			isa = PBXTargetDependency;
 			target = 6B4A651428A4B1440093A831 /* Adi-assignment */;
 			targetProxy = 6B4A652C28A4B14B0093A831 /* PBXContainerItemProxy */;
-		};
-		6B4A653728A4B14B0093A831 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 6B4A651428A4B1440093A831 /* Adi-assignment */;
-			targetProxy = 6B4A653628A4B14B0093A831 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -510,42 +476,6 @@
 			};
 			name = Release;
 		};
-		6B4A654628A4B14B0093A831 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KRJ69A8YRE;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ark.dan.Adi-assignmentUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Adi-assignment";
-			};
-			name = Debug;
-		};
-		6B4A654728A4B14B0093A831 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = KRJ69A8YRE;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ark.dan.Adi-assignmentUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Adi-assignment";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -572,15 +502,6 @@
 			buildConfigurations = (
 				6B4A654328A4B14B0093A831 /* Debug */,
 				6B4A654428A4B14B0093A831 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6B4A654528A4B14B0093A831 /* Build configuration list for PBXNativeTarget "Adi-assignmentUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6B4A654628A4B14B0093A831 /* Debug */,
-				6B4A654728A4B14B0093A831 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
