@@ -31,6 +31,9 @@ final class Coordinator {
     }
 
     func showProduct(_ product: Product) {
-
+        let viewModel = ProductVM(product: product)
+        let vc = self.storyboard.instantiateViewController(type: ProductVC.self)
+        vc.viewModel = viewModel
+        self.navController.pushViewController(vc, animated: true)
     }
 }
