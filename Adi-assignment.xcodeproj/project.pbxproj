@@ -16,6 +16,8 @@
 		6B4A654F28A4B96C0093A831 /* ProductListVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A654E28A4B96C0093A831 /* ProductListVM.swift */; };
 		6B4A655128A4B9BC0093A831 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A655028A4B9BC0093A831 /* Coordinator.swift */; };
 		6B4A655328A4C10D0093A831 /* ProductListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A655228A4C10D0093A831 /* ProductListVC.swift */; };
+		6B4A655628A4DBF60093A831 /* ProductListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A655528A4DBF60093A831 /* ProductListCell.swift */; };
+		6B4A655828A4E0AB0093A831 /* ProductListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4A655728A4E0AB0093A831 /* ProductListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,6 +43,8 @@
 		6B4A654E28A4B96C0093A831 /* ProductListVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListVM.swift; sourceTree = "<group>"; };
 		6B4A655028A4B9BC0093A831 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		6B4A655228A4C10D0093A831 /* ProductListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListVC.swift; sourceTree = "<group>"; };
+		6B4A655528A4DBF60093A831 /* ProductListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListCell.swift; sourceTree = "<group>"; };
+		6B4A655728A4E0AB0093A831 /* ProductListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProductListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,8 @@
 			children = (
 				6B4A654E28A4B96C0093A831 /* ProductListVM.swift */,
 				6B4A655228A4C10D0093A831 /* ProductListVC.swift */,
+				6B4A655528A4DBF60093A831 /* ProductListCell.swift */,
+				6B4A655728A4E0AB0093A831 /* ProductListCell.xib */,
 			);
 			path = ProductList;
 			sourceTree = "<group>";
@@ -201,6 +207,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B4A652528A4B14A0093A831 /* LaunchScreen.storyboard in Resources */,
+				6B4A655828A4E0AB0093A831 /* ProductListCell.xib in Resources */,
 				6B4A652228A4B14A0093A831 /* Assets.xcassets in Resources */,
 				6B4A652028A4B1450093A831 /* Main.storyboard in Resources */,
 			);
@@ -225,6 +232,7 @@
 				6B4A655128A4B9BC0093A831 /* Coordinator.swift in Sources */,
 				6B4A651928A4B1440093A831 /* AppDelegate.swift in Sources */,
 				6B4A654F28A4B96C0093A831 /* ProductListVM.swift in Sources */,
+				6B4A655628A4DBF60093A831 /* ProductListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

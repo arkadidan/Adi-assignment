@@ -27,6 +27,7 @@ final class Coordinator {
         vc.onOpenProduct = { [weak self] product in
             self?.showProduct(product)
         }
+        self.navController.setViewControllers([vc], animated: false)
     }
 
     func showProduct(_ product: Product) {

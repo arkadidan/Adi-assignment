@@ -8,17 +8,42 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Product ListVC-->
+        <!--title-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="ProductListVC" id="BYZ-38-t0r" customClass="ProductListVC" customModule="Adi_assignment" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="k9v-Ab-Sjf">
+                                <rect key="frame" x="20" y="88" width="374" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="vuy-ac-HJE">
+                                <rect key="frame" x="20" y="122" width="374" height="740"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="k9v-Ab-Sjf" secondAttribute="trailing" constant="20" id="FyG-Rl-TuW"/>
+                            <constraint firstItem="vuy-ac-HJE" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="JE9-YU-viH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="vuy-ac-HJE" secondAttribute="bottom" id="PXk-ZB-YGW"/>
+                            <constraint firstItem="k9v-Ab-Sjf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Reb-an-Jt4"/>
+                            <constraint firstItem="vuy-ac-HJE" firstAttribute="top" secondItem="k9v-Ab-Sjf" secondAttribute="bottom" id="gPc-I7-RJZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vuy-ac-HJE" secondAttribute="trailing" constant="20" id="oTp-BY-Q7P"/>
+                            <constraint firstItem="k9v-Ab-Sjf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="z4s-1m-J29"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="mHg-yU-VxG"/>
+                    <navigationItem key="navigationItem" title="title" id="mHg-yU-VxG"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="searchField" destination="k9v-Ab-Sjf" id="qce-Bf-lAB"/>
+                        <outlet property="tableView" destination="vuy-ac-HJE" id="NNP-if-LZB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
