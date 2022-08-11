@@ -14,10 +14,8 @@ final class ProductVC: UIViewController {
     @IBOutlet private weak var productPriceLabel: UILabel!
     @IBOutlet private weak var productDescLabel: UILabel!
 
+    @IBOutlet private weak var reviewsLabel: UILabel!
     @IBOutlet private weak var reviewsTableView: UITableView!
-
-
-    @IBOutlet private weak var addReviewButton: UIButton!
 
     var viewModel: ProductVM!
 
@@ -34,6 +32,14 @@ final class ProductVC: UIViewController {
         self.productNameLabel.text = self.viewModel.productName()
         self.productPriceLabel.text = self.viewModel.productPrice()
         self.productDescLabel.text = self.viewModel.productDesc()
+
+        self.reviewsTableView.dataSource = self
+        let nib = UINib(nibName: "ReviewCell", bundle: nil)
+        self.reviewsTableView.register(nib, forCellReuseIdentifier: ReviewCell.identifier)
+
+        self.viewModel.loadReviews { [weak self] in
+            self?.reloadReviews()
+        }
     }
 
     @objc private func onAddReview() {
@@ -59,7 +65,9 @@ final class ProductVC: UIViewController {
 
         let submit = UIAlertAction(title: "Submit", style: .default) { [weak self] _ in
             if let text = textView.text {
-                self?.viewModel.addReview(text: text)
+                self?.viewModel.addReview(text: text, completion: {
+                    self?.reloadReviews()
+                })
             }
         }
         alert.addAction(submit)
@@ -70,5 +78,22 @@ final class ProductVC: UIViewController {
         textView.becomeFirstResponder()
 
         present(alert, animated: true, completion: nil)
+    }
+
+    private func reloadReviews() {
+        self.reviewsLabel.isHidden = self.viewModel.numberOfReviews() == 0
+        self.reviewsTableView.reloadData()
+    }
+}
+
+extension ProductVC: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.viewModel.numberOfReviews()
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: ReviewCell.identifier) as! ReviewCell
+        cell.configure(review: self.viewModel.review(indexPath: indexPath))
+        return cell
     }
 }

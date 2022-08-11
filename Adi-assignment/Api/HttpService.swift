@@ -52,7 +52,7 @@ final class HttpService {
 
     var urlSession: URLSessionProtocol = URLSession(configuration: URLSessionConfiguration.default)
 
-    func sendUrlRequest<T>(_ urlRequest: URLRequest, decode: (Data) throws -> T) async throws -> T {
+    func sendUrlRequest(_ urlRequest: URLRequest) async throws -> (Data, URLResponse) {
         let (data, urlResponse) = try await self.urlSession.data(for: urlRequest)
 
         let isResponseSuccess: (URLResponse) -> Bool = { urlResponse in
@@ -70,6 +70,12 @@ final class HttpService {
             let message = "response \(statusCode)"
             throw HttpError(userMessage: message)
         }
+
+        return (data, urlResponse)
+    }
+
+    func sendUrlRequest<T>(_ urlRequest: URLRequest, decode: (Data) throws -> T) async throws -> T {
+        let (data, _) = try await self.sendUrlRequest(urlRequest)
 
         let value = try decode(data)
         return value

@@ -21,6 +21,8 @@
 		6B4A655B28A4EDC60093A831 /* ProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A655A28A4EDC60093A831 /* ProductVC.swift */; };
 		6B4A655D28A4EE3C0093A831 /* ProductService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A655C28A4EE3C0093A831 /* ProductService.swift */; };
 		6B4A655F28A4EE670093A831 /* ProductVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A655E28A4EE670093A831 /* ProductVM.swift */; };
+		6B4A656128A4FBF90093A831 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B4A656028A4FBF90093A831 /* ReviewCell.swift */; };
+		6B4A656328A4FC070093A831 /* ReviewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6B4A656228A4FC070093A831 /* ReviewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		6B4A655A28A4EDC60093A831 /* ProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVC.swift; sourceTree = "<group>"; };
 		6B4A655C28A4EE3C0093A831 /* ProductService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductService.swift; sourceTree = "<group>"; };
 		6B4A655E28A4EE670093A831 /* ProductVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductVM.swift; sourceTree = "<group>"; };
+		6B4A656028A4FBF90093A831 /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		6B4A656228A4FC070093A831 /* ReviewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ReviewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +142,8 @@
 				6B4A655C28A4EE3C0093A831 /* ProductService.swift */,
 				6B4A655A28A4EDC60093A831 /* ProductVC.swift */,
 				6B4A655E28A4EE670093A831 /* ProductVM.swift */,
+				6B4A656028A4FBF90093A831 /* ReviewCell.swift */,
+				6B4A656228A4FC070093A831 /* ReviewCell.xib */,
 			);
 			path = Product;
 			sourceTree = "<group>";
@@ -224,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B4A652528A4B14A0093A831 /* LaunchScreen.storyboard in Resources */,
+				6B4A656328A4FC070093A831 /* ReviewCell.xib in Resources */,
 				6B4A655828A4E0AB0093A831 /* ProductListCell.xib in Resources */,
 				6B4A652228A4B14A0093A831 /* Assets.xcassets in Resources */,
 				6B4A652028A4B1450093A831 /* Main.storyboard in Resources */,
@@ -245,6 +252,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B4A654A28A4B2A90093A831 /* HttpService.swift in Sources */,
+				6B4A656128A4FBF90093A831 /* ReviewCell.swift in Sources */,
 				6B4A655D28A4EE3C0093A831 /* ProductService.swift in Sources */,
 				6B4A655B28A4EDC60093A831 /* ProductVC.swift in Sources */,
 				6B4A655328A4C10D0093A831 /* ProductListVC.swift in Sources */,
