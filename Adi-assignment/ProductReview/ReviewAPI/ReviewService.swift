@@ -15,7 +15,11 @@ protocol ReviewServiceProtocol {
 
 final class ReviewService: ReviewServiceProtocol {
 
-    let httpService = HttpService()
+    let httpService: HttpService
+
+    init(httpService: HttpService = HttpService()) {
+        self.httpService = httpService
+    }
 
     func reviews(prodictId: String) async throws -> [Review] {
         let urlRequest = ReviewsRequest(productId: prodictId).urlRequest()

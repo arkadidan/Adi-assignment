@@ -10,7 +10,7 @@ import UIKit
 
 final class ProductListVM {
 
-    let httpService = HttpService()
+    var httpService: HttpServicveProtocol
 
     private var allProducts = [Product]()
     private var products: [Product] {
@@ -20,6 +20,10 @@ final class ProductListVM {
     var searchString: String?
 
     var onError: ((Error) -> Void)?
+
+    init(httpService: HttpServicveProtocol = HttpService()) {
+        self.httpService = httpService
+    }
 
     func loadData(completion: @escaping () -> Void) {
         Task {

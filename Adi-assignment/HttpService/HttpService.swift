@@ -17,9 +17,17 @@ extension URLSession: URLSessionProtocol {
     }
 }
 
+protocol HttpServicveProtocol {
+    func sendRequest<T: Decodable>(_ urlRequest: URLRequest) async throws -> T
+}
+
 final class HttpService {
     
-    var urlSession: URLSessionProtocol = URLSession(configuration: URLSessionConfiguration.ephemeral)
+    var urlSession: URLSessionProtocol
+
+    init(urlSession: URLSessionProtocol = URLSession(configuration: URLSessionConfiguration.default)) {
+        self.urlSession = urlSession
+    }
 
     func sendUrlRequest(_ urlRequest: URLRequest) async throws -> (Data, URLResponse) {
         let (data, urlResponse) = try await self.urlSession.data(for: urlRequest)
@@ -57,7 +65,7 @@ final class HttpService {
     }
 }
 
-extension HttpService {
+extension HttpService: HttpServicveProtocol {
     func sendRequest<T: Decodable>(_ urlRequest: URLRequest) async throws -> T {
         return try await self.sendUrlRequest(urlRequest, decode: { data throws -> T in
             return try JSONDecoder().decode(T.self, from: data)
